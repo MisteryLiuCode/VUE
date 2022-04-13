@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定事件</title>
+</head>
+<body>
+
+<div>
+<!--    绑定事件-->
+    <button id="test" v-on:click="say()">点击</button>
+</div>
+
+<!--引入vue-->
+<script src="vue.js" type="text/javascript"></script>
+<script>
+//    绑定一个按钮，弹出点击事件
+var vm=new Vue({
+    el: "#test",
+    data :{
+        message: "我被弹出了"
+    },
+    methods: {
+        //创造事件
+        say: function (){
+            alert(this.message);
+        }
+    }
+})
+</script>
+</body>
+</html>

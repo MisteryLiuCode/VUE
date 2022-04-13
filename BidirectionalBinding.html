@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--实现一个本文框和后面的一个文本，文本框输入东西，后面的文本会跟着文本框变-->
+
+<!--这两个是同时绑定的，所以要在一个id下面-->
+<div id="app">
+<!--    他绑定message-->
+    输入文本：<input type="text" v-model="message">
+<!--    他也是绑定的message-->
+    {{ message }}
+</div>
+
+<!--引入vue-->
+<script src="vue.js" type="text/javascript"></script>
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            //设置默认值123
+            message: "123"
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--引入vue-->
+<script src="vue.js" type="text/javascript"></script>
+
+<body>
+<div id="app">
+<!--    主要是使用v-if标签 -->
+<!--    <h1 v-if="ok">成功</h1>-->
+<!--    <h1 v-else>失败</h1>-->
+
+<!--    演示if else-if else-->
+    <h1 v-if="type==='a'">A</h1>
+    <h1 v-else-if="type==='b'">B</h1>
+    <h1 v-else>C</h1>
+</div>
+
+<script>
+    var vm=new Vue({
+        el: "#app",
+        data: {
+            // ok: true
+            type: "a"
+        }
+    });
+</script>
+
+</body>
+</html>

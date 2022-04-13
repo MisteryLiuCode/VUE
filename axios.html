@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--创建一个容器，接收div-->
+<div id="vue">
+    <div>{{info.name}}</div>
+    <div>{{info.address.country}}</div>
+</div>
+
+<!--引入axios-->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!--引入vue-->
+<script src="vue.js" type="text/javascript"></script>
+
+<!--请求data.json-->
+<script type="text/javascript">
+    var vm= new Vue({
+        el: "#vue",
+        //接收里面的data信息
+        data(){
+            return{
+            //    请求返回的参数格式，和json里面的格式一样
+                info:{
+                    name: null,
+                    address: {
+                        street: null,
+                        city: null,
+                        country: null
+                    }
+                }
+            }
+        },
+        mounted(){//钩子函数，链式编程
+            axios.get('data.json').then(response=>(this.info=response.data));
+        }
+    });
+</script>
+</body>
+</html>
