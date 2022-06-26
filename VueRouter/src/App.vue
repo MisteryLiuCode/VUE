@@ -1,17 +1,22 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
-  </div>
+<h1 id="app">主页</h1>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
 
 export default {
   name: 'App',
   components: {
     HelloWorld
+  }
+}
+
+//引入content
+import Content from "./components/Content";
+export default {
+  name: 'Content',
+  components: {
+    Content
   }
 }
 </script>
